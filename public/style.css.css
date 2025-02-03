@@ -1,0 +1,23 @@
+body {
+  background-color:whitesmoke ;
+
+}
+
+.background {
+  background-image: url('./groene\ ster.gif');
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 32%;
+  margin-right: 32%;
+  margin-top: 10%;
+  margin-bottom: 15%;
+}
+
+img {
+  grid-column-start: 2;
+}
+
+ul {
+  grid-column-start: 1;
+  font-size: 185%;
+}
