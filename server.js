@@ -7,7 +7,7 @@ import { Liquid } from 'liquidjs';
 
 
 // Vul hier jouw eigen ID in (zie de instructies in de leertaak)
-const personID = 234
+const personID = 184
 
 // Doe een fetch naar een URL op de WHOIS API, ga pas verder als de fetch gelukt is
 const personResponse = await fetch('https://fdnd.directus.app/items/person/' + personID)
@@ -41,6 +41,11 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
    response.render('index.liquid', {person: personResponseJSON.data})
+})
+
+app.get('/oefenen', async function (request, response) {
+  // Render oefenen.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+  response.render('oefenen.liquid', {person: personResponseJSON.data})
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
