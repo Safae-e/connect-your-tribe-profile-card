@@ -43,9 +43,10 @@ app.get('/', async function (request, response) {
    response.render('index.liquid', {person: personResponseJSON.data})
 })
 
+const custom = JSON.parse(personResponseJSON.data.custom)
 app.get('/oefenen', async function (request, response) {
   // Render oefenen.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-  response.render('oefenen.liquid', {person: personResponseJSON.data})
+  response.render('oefenen.liquid', {person: personResponseJSON.data, custom: custom})
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
@@ -72,3 +73,5 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+console.log(personResponseJSON.data.custom)
