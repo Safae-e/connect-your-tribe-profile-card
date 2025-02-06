@@ -29,7 +29,7 @@ body {
 }
 
 .card-image {
-  max-width: 100%; /* Zorgt ervoor dat de afbeelding niet groter wordt dan de container */
+  max-width: 100%; /*Zorgt ervoor dat de afbeelding niet groter wordt dan de container*/
   height: auto;
   margin-top: 85px;
   border-radius: 15px;
