@@ -38,16 +38,17 @@ app.set('views', './views')
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
+const custom = JSON.parse(personResponseJSON.data.custom)
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('index.liquid', {person: personResponseJSON.data})
+   response.render('index.liquid', {person: personResponseJSON.data, custom: custom})
 })
 
-const custom = JSON.parse(personResponseJSON.data.custom)
-app.get('/oefenen', async function (request, response) {
-  // Render oefenen.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-  response.render('oefenen.liquid', {person: personResponseJSON.data, custom: custom})
-})
+// const custom = JSON.parse(personResponseJSON.data.custom)
+// app.get('/oefenen', async function (request, response) {
+//   // Render oefenen.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+//   response.render('oefenen.liquid', {person: personResponseJSON.data, custom: custom})
+// })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
 // Maak daar dan meer Routes voor aan, en koppel ze aan Views
@@ -75,3 +76,4 @@ app.listen(app.get('port'), function () {
 })
 
 console.log(personResponseJSON.data.custom)
+// console.log(personResponseJSON.data.custoom)
