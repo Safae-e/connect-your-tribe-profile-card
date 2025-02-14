@@ -1,5 +1,6 @@
 // Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
 // Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
+// zorgt ervoor dat je de local host kan zien, en zorgt ervoor dat er een webserver beschikbaar is.
 import express from 'express'
 
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
@@ -76,4 +77,3 @@ app.listen(app.get('port'), function () {
 })
 
 console.log(personResponseJSON.data.custom)
-// console.log(personResponseJSON.data.custoom)
